@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Alta de Trabajador</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma/bulma.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>   
+    
+</head>
+
+<body>
+    <header class="container-fluid bg-primary py-3">
+        <div class="container">
+            <h1 class="text-white">Agregar Empleados</h1>
+        </div>
+        <div class="logo">
+            <img src="https://cdn-icons-png.freepik.com/512/14655/14655857.png" alt="Descripción de la imagen">
+        </div>
+    </header>
+
+    <main class="container py-4">
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="firstName">
+            </div>
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="lastName">
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Telefono</label>
+                <input type="text" class="form-control" id="phoneNumber">
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="col-md-6">
+                <label for="jobTitle" class="form-label">Cargo</label>
+                <input type="text" class="form-control" id="jobTitle">
+            </div>
+            <div class="col-md-6">
+                <label for="city" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="city">
+            </div>
+            <div class="col-12">
+                <label for="address" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St">
+            </div>
+           
+            <div class="col-md-4">
+                <label for="state" class="form-label">Estado</label>
+                <select id="state" class="form-select">
+                    <option selected>Seleccionar...</option>
+                    <option>Chiapas</option>
+                    <option>Nuevo León</option>
+                    <option>Yucatán</option>
+                    <option>Oaxaca</option>
+                    <option>Morelos</option>
+                    <option>Jalisco</option>
+                    <option>CDMX</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="zip" class="form-label">Código Postal</label>
+                <input type="text" class="form-control" id="zip">
+            </div>
+            <div class="mt-3">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary" id="agenda-btn">Agregar</button>
+                    <button type="button" class="btn btn-primary" id="search-btn">Buscar</button>
+                    <button type="button" class="btn btn-primary" id="min-btn">Valor Mínimo</button>
+                    <button type="button" class="btn btn-primary" id="max-btn">Valor Máximo</button>
+                    <button type="button" class="btn btn-primary" id="full-btn">Mostrar todos los empleados</button>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="address" class="form-label">Apellido a Buscar</label>
+                <input type="text" class="form-control" id="lastNameSerach">
+            </div>
+            <div id="searchResults" class="container mt-4">
+                
+            </div>
+        </form>
+    </main>
+
+    <script type="module" src="src/controller/script.js"></script>
+</body>
+
+</html>
