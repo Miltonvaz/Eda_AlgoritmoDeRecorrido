@@ -64,8 +64,9 @@ class BST {
     }
     
     minNode(node) {
-        if (node.left == null) return node;
-        else return this.minNode(node.left);
+        if (node != null && node.left != null) 
+            return this.minNode(node.left);
+        else return node;
     }
     
     max() {
@@ -73,8 +74,9 @@ class BST {
     }
     
     maxNode(node) {
-        if (node.right == null) return node;
-        else return this.maxNode(node.right);
+        if (node != null && node.right != null) 
+            return this.maxNode(node.right);
+        else return node;
     }
 }
 

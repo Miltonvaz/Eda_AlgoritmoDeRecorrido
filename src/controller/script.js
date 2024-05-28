@@ -50,8 +50,15 @@ btnAdd.addEventListener("click", () => {
         });
     }
 });
+
 btnSearch.addEventListener("click", () => {
     let lastName = document.getElementById("lastNameSerach").value.trim();
+
+
+    if (lastName === "") {
+        return; 
+    }
+
     let employeeFound = false; 
 
     searchResultsContainer.innerHTML = "";
@@ -75,15 +82,15 @@ btnSearch.addEventListener("click", () => {
     } else {
         Swal.fire({
             icon: "error",
-            title: "No se encontró",
-            text: "No se encontró ningún empleado con ese apellido.",
-            icon: "error"
+            title: "Oops...",
+            text: "El Usuario no se encuentra",
         });
     }
 });
 
+
 btnMin.addEventListener("click", () => {
-    let route = bst.min(); 
+    let route = bst.min();
     searchResultsContainer.innerHTML = ""; 
     
     if (route) {
@@ -98,6 +105,7 @@ btnMin.addEventListener("click", () => {
 btnMax.addEventListener("click", () => {
     let route = bst.max(); 
     searchResultsContainer.innerHTML = ""; 
+
     if (route) {
         let empleadoElement1 = document.createElement("div");
         empleadoElement1.textContent = `Nombre: ${route.value.firstName || 'N/A'} ${route.value.lastName || 'N/A'}, Teléfono: ${route.value.phoneNumber || 'N/A'}, Puesto: ${route.value.jobTitle || 'N/A'}, Email: ${route.value.email || 'N/A'}, Dirección: ${route.value.address || 'N/A'}, Ciudad: ${route.value.city || 'N/A'}, Estado: ${route.value.state || 'N/A'}, Zip: ${route.value.zip || 'N/A'}`;
@@ -108,9 +116,8 @@ btnMax.addEventListener("click", () => {
 });
 
 btnFull.addEventListener("click", () =>{
-
     searchResultsContainer.innerHTML = ""; 
-
+    
     bst.inOrder((empleado) => { 
         let empleadoElement = document.createElement("div");
         empleadoElement.textContent = `Nombre: ${empleado.firstName} ${empleado.lastName}, Teléfono: ${empleado.phoneNumber}, Puesto: ${empleado.jobTitle}, Email: ${empleado.email}, Dirección: ${empleado.address}, Ciudad: ${empleado.city}, Estado: ${empleado.state}, Zip: ${empleado.zip}`;
